@@ -108,7 +108,7 @@ snake.strategies = {
         if(EAT == 'EAT'){
             return 
         }
-        console.log(123)
+        // console.log(123)
         var newFloor = SquareFactory.create('Floor',snake.tail.x,snake.tail.y,'orange')
         oGround.removeAndAppend(newFloor)
         // snake.tail = newFloor
@@ -185,12 +185,18 @@ snake.strategies = {
         // }
     },  
     DIE:function(){
+        var dom = document.createElement('div')
+        dom.innerText = ' GAME OVER ' + '你的分数是' + oGame.score + ',     try again?'
         console.log(' GAME OVER ' + '你的分数是' + oGame.score ) 
-        oGame.over() 
+        document.body.appendChild(dom)
+        dom.style.cursor = 'pointer'
+        dom.style.textAlign = 'center'
+        oGame.over(dom) 
     },
     EATMORE:function(square){
-        console.log(123)
+        // console.log(123)
         this.MOVE(square,'EATMORE')
+        oGame.score ++ 
         var flag = true;
         var x = null;
         var y = null;

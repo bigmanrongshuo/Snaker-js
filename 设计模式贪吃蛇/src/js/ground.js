@@ -3,7 +3,6 @@ var oGround = new Ground (BASE_X_POINT,BASE_Y_POINT,XLEN*LIW,YLEN*LIW,document.c
 
 oGround.SquareTable = [];
 
-
 oGround.init = function(){
     console.log(1)
     this.viewContent.style.position = 'absolute',

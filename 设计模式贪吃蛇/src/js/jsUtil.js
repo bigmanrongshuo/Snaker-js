@@ -3,6 +3,8 @@ var jsUtil = {
         var result = function () {
             origin.apply(this, arguments)
         }
+
+        console.log(this)
         this.inherit(result, origin)
         return result;
     },

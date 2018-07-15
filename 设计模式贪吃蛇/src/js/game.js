@@ -117,8 +117,15 @@ oGame.start = function () {
     }, INTERVAL)
 }
 
-oGame.over = function () {
+oGame.over = function (dom) {
+    // console.log(dom)
     clearInterval(this.timer)
+    dom.onclick = function(){
+        // console.log(this)
+        document.body.removeChild(dom)
+        oGame.init()
+        oGame.start()
+    }
 }
 oGame.init()
 oGame.start()
